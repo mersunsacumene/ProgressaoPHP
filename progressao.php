@@ -285,3 +285,151 @@
 //     echo($saldoCliente) . " É o que lhe restou!!!\n";
 //     echo"Estoque atualizado" . calcularTotal($estoque);  
 // };
+
+//Exercicio - 20
+// Calcaludora.php
+// <?php
+//     if($_SERVER["REQUEST_METHOD"] == "POST"){
+//         $numberOne = $_POST["numberOne"];
+//         $numberTwo = $_POST["numberTwo"];
+//         $operation = $_POST["operation"];
+//         $result = 0;
+
+//     switch($operation){
+//         case "+": 
+//             $result = $numberOne + $numberTwo;
+//         break;
+//         case "-": 
+//             $result = $numberOne - $numberTwo;
+//         break;
+//         case "/": 
+//             if($numberTwo != 0){
+//             $result = $numberOne / $numberTwo;
+//             }else{
+//                 $result = "infinito";
+//             }
+//         break;
+//         case "*": 
+//             $result = $numberOne * $numberTwo;
+//         break;
+
+//         default: 
+//         $result = "Operador invalido";
+//     }
+//     }
+
+
+// ?>
+
+<!-- // <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+     <h1>Calculadora</h1>
+     <p>O Resultado é: <?php echo $result; ?></p>
+    <a href="index.php">Voltar ao Inicio</a>
+ </body>
+ </html> -->
+
+<!-- index.php -->
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculadora de Pobre</h1>
+    <form action="calculadora.php" method="POST">
+        <input type="number" name="numberOne" required placeholder="Digite o primeiro Numero"><br>
+        <input type="number" name="numberTwo" required placeholder="Digite o segundo Numero"><br>
+        <select name="operation" id="" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+</html> -->
+
+//Exercicio - 21
+product.php
+<?php
+$produtos = [
+    $produtos = [
+        1 => [
+            'nome' => 'Arroz',
+            'descricao' => 'É utilizado em inúmeras receitas, como arroz branco, risotos, arroz doce, sushi, entre outros. Além disso, é um alimento versátil, acompanhando pratos de carnes, legumes e vegetais.',
+            'preco' => 'R$ 20,00'
+        ],
+        2 => [
+            'nome' => 'Feijao',
+            'descricao' => 'O feijão é um alimento tradicional e altamente nutritivo, amplamente consumido em diversas culturas, especialmente na América Latina e em países como o Brasil. Rico em proteínas, fibras, ferro, e minerais essenciai.',
+            'preco' => 'R$ 14,00'
+        ],
+        3 => [
+            'nome' => 'Contra-File',
+            'descricao' => 'O contra-filé pode ser preparado de diversas formas, como na churrasqueira, frigideira ou grelha, e costuma ser temperado de maneira simples, com sal grosso, para realçar seu sabor natural. Além de ser servido com acompanhamentos variados, como arroz, batatas, legumes ou saladas, o contra-filé é uma ótima escolha para quem aprecia carnes',
+            'preco' => 'R$ 40,00'
+        ],
+    ]
+    ];
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+if(isset($produtos[$id])){
+    $produto = $produtos[$id];
+}else{
+    $produto = null;
+}
+?> 
+index.php
+<?php
+$produtos = [
+    1 => [
+        'nome' => 'Arroz',
+        'descricao' => 'É utilizado em inúmeras receitas, como arroz branco, risotos, arroz doce, sushi, entre outros.',
+        'preco' => 'R$ 20,00'
+    ],
+    2 => [
+        'nome' => 'Feijao',
+        'descricao' => 'O feijão é um alimento tradicional e altamente nutritivo, amplamente 
+        consumido em diversas culturas, especialmente na América Latina e em países como o Brasil.',
+        'preco' => 'R$ 14,00'
+    ],
+    3 => [
+        'nome' => 'Contra-File',
+        'descricao' => 'O contra-filé pode ser preparado de diversas formas, como na churrasqueira, 
+        frigideira ou grelha, e costuma ser temperado de maneira simples, com sal grosso, para realçar seu sabor natural.',
+        'preco' => 'R$ 40,00'
+    ],
+]
+?>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Catalogo</h1>
+    <ul>
+     <?php foreach ($produtos as $id => $produto ): ?> 
+        <li>
+            <h2><?php echo $produto['nome'];?></h2>
+            <p><?php echo $produto['descricao'];?></p>
+            <p><?php echo $produto['preco'];?></p>
+            <a href="product.php?id=<?php echo $id;?>">Ver Detalhes</a>
+        </li>
+        <?php endforeach;?>
+    </ul>
+</body>
+</html> 
