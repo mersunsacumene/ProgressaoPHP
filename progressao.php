@@ -361,7 +361,7 @@
 </body>
 </html> -->
 
-//Exercicio - 21
+Exercicio - 21
 product.php
 <?php
 $produtos = [
@@ -433,3 +433,38 @@ $produtos = [
     </ul>
 </body>
 </html> 
+
+Exercicios - 22
+index.php
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sejam Bem vindo!!!</h1>
+   <form action="login.php" method = "POST">
+    <label for="name">Nome do  Usuário</label>
+    <input type="text" id="name" name="user" requeired><br>
+    <label for="senha">Senha do Usuário</label>
+    <input type="text" id="senha" name="password" requeired><br>
+    <button type="submit">Enviar</button>
+   </form>
+</body>
+</html> -->
+login.php
+<?php
+
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
+//     $login = "administrador";
+//     $senha = md5("1234");
+// if($_POST["user"] == $login && md5($_POST["password"]) == $senha){
+//     echo "Seja bem bindo!!!";
+// }else{
+//     echo "Usuário ou Senha invalidos!!!";
+// }
+// }
+
+
