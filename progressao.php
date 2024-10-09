@@ -361,58 +361,58 @@
 </body>
 </html> -->
 
-Exercicio - 21
-product.php
-<?php
-$produtos = [
-    $produtos = [
-        1 => [
-            'nome' => 'Arroz',
-            'descricao' => 'É utilizado em inúmeras receitas, como arroz branco, risotos, arroz doce, sushi, entre outros. Além disso, é um alimento versátil, acompanhando pratos de carnes, legumes e vegetais.',
-            'preco' => 'R$ 20,00'
-        ],
-        2 => [
-            'nome' => 'Feijao',
-            'descricao' => 'O feijão é um alimento tradicional e altamente nutritivo, amplamente consumido em diversas culturas, especialmente na América Latina e em países como o Brasil. Rico em proteínas, fibras, ferro, e minerais essenciai.',
-            'preco' => 'R$ 14,00'
-        ],
-        3 => [
-            'nome' => 'Contra-File',
-            'descricao' => 'O contra-filé pode ser preparado de diversas formas, como na churrasqueira, frigideira ou grelha, e costuma ser temperado de maneira simples, com sal grosso, para realçar seu sabor natural. Além de ser servido com acompanhamentos variados, como arroz, batatas, legumes ou saladas, o contra-filé é uma ótima escolha para quem aprecia carnes',
-            'preco' => 'R$ 40,00'
-        ],
-    ]
-    ];
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-if(isset($produtos[$id])){
-    $produto = $produtos[$id];
-}else{
-    $produto = null;
-}
+<!-- Exercicio - 21
+product.php -->
+ <?php
+// $produtos = [
+//     $produtos = [
+//         1 => [
+//             'nome' => 'Arroz',
+//             'descricao' => 'É utilizado em inúmeras receitas, como arroz branco, risotos, arroz doce, sushi, entre outros. Além disso, é um alimento versátil, acompanhando pratos de carnes, legumes e vegetais.',
+//             'preco' => 'R$ 20,00'
+//         ],
+//         2 => [
+//             'nome' => 'Feijao',
+//             'descricao' => 'O feijão é um alimento tradicional e altamente nutritivo, amplamente consumido em diversas culturas, especialmente na América Latina e em países como o Brasil. Rico em proteínas, fibras, ferro, e minerais essenciai.',
+//             'preco' => 'R$ 14,00'
+//         ],
+//         3 => [
+//             'nome' => 'Contra-File',
+//             'descricao' => 'O contra-filé pode ser preparado de diversas formas, como na churrasqueira, frigideira ou grelha, e costuma ser temperado de maneira simples, com sal grosso, para realçar seu sabor natural. Além de ser servido com acompanhamentos variados, como arroz, batatas, legumes ou saladas, o contra-filé é uma ótima escolha para quem aprecia carnes',
+//             'preco' => 'R$ 40,00'
+//         ],
+//     ]
+//     ];
+// $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+// if(isset($produtos[$id])){
+//     $produto = $produtos[$id];
+// }else{
+//     $produto = null;
+// }
 ?> 
-index.php
+<!-- index.php -->
 <?php
-$produtos = [
-    1 => [
-        'nome' => 'Arroz',
-        'descricao' => 'É utilizado em inúmeras receitas, como arroz branco, risotos, arroz doce, sushi, entre outros.',
-        'preco' => 'R$ 20,00'
-    ],
-    2 => [
-        'nome' => 'Feijao',
-        'descricao' => 'O feijão é um alimento tradicional e altamente nutritivo, amplamente 
-        consumido em diversas culturas, especialmente na América Latina e em países como o Brasil.',
-        'preco' => 'R$ 14,00'
-    ],
-    3 => [
-        'nome' => 'Contra-File',
-        'descricao' => 'O contra-filé pode ser preparado de diversas formas, como na churrasqueira, 
-        frigideira ou grelha, e costuma ser temperado de maneira simples, com sal grosso, para realçar seu sabor natural.',
-        'preco' => 'R$ 40,00'
-    ],
-]
-?>
- <!DOCTYPE html>
+// $produtos = [
+//     1 => [
+//         'nome' => 'Arroz',
+//         'descricao' => 'É utilizado em inúmeras receitas, como arroz branco, risotos, arroz doce, sushi, entre outros.',
+//         'preco' => 'R$ 20,00'
+//     ],
+//     2 => [
+//         'nome' => 'Feijao',
+//         'descricao' => 'O feijão é um alimento tradicional e altamente nutritivo, amplamente 
+//         consumido em diversas culturas, especialmente na América Latina e em países como o Brasil.',
+//         'preco' => 'R$ 14,00'
+//     ],
+//     3 => [
+//         'nome' => 'Contra-File',
+//         'descricao' => 'O contra-filé pode ser preparado de diversas formas, como na churrasqueira, 
+//         frigideira ou grelha, e costuma ser temperado de maneira simples, com sal grosso, para realçar seu sabor natural.',
+//         'preco' => 'R$ 40,00'
+//     ],
+// ]
+?> 
+ <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -432,10 +432,10 @@ $produtos = [
         <?php endforeach;?>
     </ul>
 </body>
-</html> 
+</html>  -->
 
-Exercicios - 22
-index.php
+<!-- Exercicios - 22
+index.php -->
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -454,7 +454,7 @@ index.php
    </form>
 </body>
 </html> -->
-login.php
+<!-- login.php -->
 <?php
 
 // if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -467,4 +467,143 @@ login.php
 // }
 // }
 
+// Exercicios - 23
+// cadastro.php
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Cadastro</title>
+// </head>
+// <body>
+//     <h1>Cadastro no Banco do Mersun</h1>
+//     <form action="insert.php" method="POST">
+//         <label for="name">Nome</label>
+//         <input type="text" id="nome" name="name" required><br><br>
+
+//         <label for="email">Email</label>
+//         <input type="text" id="email" name="email" required><br><br>
+
+//         <label for="age">Idade</label>
+//         <input type="text" id="idade" name="age" required><br><br>
+
+//         <label for="address">Endereço</label>
+//         <input type="text" id="endereço" name="address" required><br><br>
+
+//         <button type="submit">CADASTRAR</button>
+//     </form>
+    
+// </body>
+// </html>
+
+// inser.php
+// <?php
+// // Configurações do banco de dados
+// $host = 'localhost';
+// $db = 'ESTUDANDO'; // Nome do banco de dados
+// $user = 'mersun'; // Nome do usuário do banco de dados
+// $pass = '123qweqwe2';   // Senha do usuário
+
+// try {
+//     // Criação da conexão PDO
+//     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//     // Verifica se os dados foram enviados via POST
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//         // Obtém os dados do formulário
+//         $nome = $_POST['name'];
+//         $email = $_POST['email'];
+//         $idade = $_POST['age'];
+//         $endereco = $_POST['address'];
+
+//         // Prepara a instrução SQL
+//         $sql = "INSERT INTO USUARIOS(nome, email, idade, endereco) VALUES (:nome, :email, :idade, :endereco)";
+//         $stmt = $pdo->prepare($sql);
+        
+//         // Vincula os parâmetros
+//         $stmt->bindParam(':nome', $nome);
+//         $stmt->bindParam(':email', $email);
+//         $stmt->bindParam(':idade', $idade);
+//         $stmt->bindParam(':endereco', $endereco);
+        
+//         // Executa a consulta
+//         $stmt->execute();
+
+//         // Redireciona de volta para o formulário
+//         header("Location: cadastro.php");
+//         exit();
+//     }
+// } catch (PDOException $e) {
+//     // Exibe o erro se ocorrer
+//     echo "Erro ao inserir dados: " . $e->getMessage();
+// }
+// ?>
+
+<!-- Exercicios - 24
+<?php
+    // $host = 'localhost';
+    // $db   = 'ESTUDANDO';
+    // $user = 'mersun';
+    // $pass = '123qweqwe2';
+
+    // try {
+    //     // Criação da conexão PDO
+    //     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    //     // Verifica se os dados foram enviados via GET
+    //     if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    
+    //         $sql = "SELECT * FROM USUARIOS";
+    //         $stmt = $pdo->prepare($sql);
+    //         $stmt->execute();
+            
+    // $resultQuery = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    //     }
+    // } catch (PDOException $e) {
+    //     // Exibe o erro se ocorrer
+    //     echo "Erro ao inserir dados: " . $e->getMessage();
+    // }
+    // $pdo = null;
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach($resultQuery as $item):?>
+            <tr>
+                <td><?php echo($item['id']);?></td>
+                <td><?php echo($item['nome']);?></td>
+                <td><?php echo($item['email']);?></td>
+                <td><?php echo($item['idade']);?></td>
+                <td><?php echo($item['endereco']);?></td>
+            </tr>
+            <?php endforeach;?>
+        </tbody>
+
+    </table>
+    
+</body>
+</html>
 
