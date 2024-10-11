@@ -669,3 +669,298 @@ imprimeSession.php
 // }
 
 ?>
+
+// Exercicios - 28
+insert.php
+session_start();
+$host = 'localhost';
+$db = 'ESTUDANDO'; // Nome do banco de dados
+$user = 'mersun'; // Nome do usuário do banco de dados
+$pass = '123qweqwe2';   // Senha do usuário
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Obtém os dados do formulário
+        $nome = $_POST['name'];
+        $email = $_POST['email'];
+        $idade = $_POST['age'];
+        $endereco = $_POST['address'];
+
+        $sql = "INSERT INTO USUARIOS(nome, email, idade, endereco) VALUES (:nome, :email, :idade, :endereco)";
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':idade', $idade);
+        $stmt->bindParam(':endereco', $endereco);
+
+        $stmt->execute();
+        $_SESSION['create']=time() + 20;
+
+        header("Location: usuario.php");
+        exit();
+    }
+} catch (PDOException $e) {
+    echo "Erro ao inserir dados: " . $e->getMessage();
+}
+?>
+usuario.php
+<?php
+    // $host = 'localhost';
+    // $db   = 'ESTUDANDO';
+    // $user = 'mersun';
+    // $pass = '123qweqwe2';
+
+    // session_start();
+    // $create = null;
+    // $edit = null;
+    // $delete = null;
+
+    // if (isset($_SESSION['create']) && time() < $_SESSION['create']){
+    //     $create = true;
+    // }else{
+    //     unset($_SESSION['create']);
+    //     $create = false;
+    // }  if (isset($_SESSION['edit']) && time() < $_SESSION['edit']){
+    //     $edit = true;
+    // }else{
+    //     unset($_SESSION['edit']);
+    //     $edit = false;
+    // }  if (isset($_SESSION['delete']) && time() < $_SESSION['delete']){
+    //     $delete = true;
+    // }else{
+    //     unset($_SESSION['delete']);
+    //     $delete = false;
+    // }
+    // try {
+    //     // Criação da conexão PDO
+    //     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    //     // Verifica se os dados foram enviados via GET
+    //     if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+    //         $sql = "SELECT * FROM USUARIOS";
+    //         $stmt = $pdo->prepare($sql);
+    //         $stmt->execute();
+
+    // $resultQuery = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    //     }
+    // } catch (PDOException $e) {
+    //     // Exibe o erro se ocorrer
+    //     echo "Erro ao inserir dados: " . $e->getMessage();
+    // }
+    // $pdo = null;
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+</head>
+<body>
+    <?php 
+    // if($create) echo "Cadastrado com sucesso.";
+    // if($edit) echo "Edição feita com sucesso.";
+    // if($delete) echo "Usuario deletado com sucesso.";
+    ?>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Endereço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach($resultQuery as $item):?>
+            <tr>
+                <td><?php echo($item['id']);?></td>
+                <td><?php echo($item['nome']);?></td>
+                <td><?php echo($item['email']);?></td>
+                <td><?php echo($item['idade']);?></td>
+                <td><?php echo($item['endereco']);?></td>
+                <td>
+                <a href="/usuarioEdit.php?id=<?php echo $item['id'];?>">Editar</a>
+                <a href="/usuarioDelete.php?id=<?php echo $item['id'];?>">Deletar</a>
+            </td>
+            </tr>
+            <?php endforeach;?>
+        </tbody>
+
+    </table>
+
+</body>
+</html>
+usuarioEdit.php
+<?php
+// session_start();
+// $id = null;
+// if (isset($_GET["id"])) {
+//     $id = intval($_GET["id"]);
+// }else{
+//     header("location: usuario.php");
+// }
+
+// $host = 'localhost';
+// $db = 'ESTUDANDO';
+// $user = 'mersun';
+// $pass = '123qweqwe2';
+// try {
+//     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//     $query = "SELECT * FROM USUARIOS WHERE id = :id";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+//     $stmt->execute();
+//     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+//     if(count($usuario) == 0){
+//         header("location:  usuario.php");
+//         exit();
+//     }
+
+//     if($_SERVER["REQUEST_METHOD"] == "POST"){
+//      $editQuery = "UPDATE USUARIOS SET nome = :nome, email = :email, idade = :idade, endereco = :endereco WHERE id = :id";
+//      $stmtEdit = $pdo->prepare($editQuery);
+//      $stmtEdit->bindParam(":id", $id, PDO::PARAM_INT);
+//      $stmtEdit->bindParam(":nome", $_POST['name']);
+//      $stmtEdit->bindParam(":email", $_POST['email']);
+//      $stmtEdit->bindParam(":idade", $_POST['age'], PDO::PARAM_INT);
+//      $stmtEdit->bindParam(":endereco", $_POST['address']);
+//      $stmtEdit->execute();
+//      $_SESSION ['edit'] = time() + 20;
+//         header("location: usuario.php");
+//         exit();
+//     }
+
+// } catch (PDOException $e) {
+//     echo "Erro ao inserir dados: " . $e->getMessage();
+
+// }
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <?php
+ var_dump($usuarios);
+ ?>
+     <h1>Cadastro no Banco do Mersun</h>
+ <form method="POST">
+     <label for="name">Nome</label>
+     <input type="text" id="nome" name="name" value="<?php echo($usuario['nome']) ;?>" required><br><br>
+
+     <label for="email">Email</label>
+     <input type="text" id="email" name="email" value="<?php echo($usuario['email']) ;?>" required><br><br>
+
+     <label for="age">Idade</label>
+     <input type="text" id="idade" name="age" value="<?php echo($usuario['idade']) ;?>" required><br><br>
+
+     <label for="address">Endereço</label>
+     <input type="text" id="endereço" name="address" value="<?php echo($usuario['endereco']) ;?>" required><br><br>
+
+     <button type="submit">Editar</button>
+ </form>
+
+
+</body>
+</html>
+usuarioDelete.php
+// session_start();
+// $id = null;
+// if (isset($_GET["id"])) {
+//     $id = intval($_GET["id"]);
+// }else{
+//     header("location: usuario.php");
+// }
+
+// $host = 'localhost';
+// $db = 'ESTUDANDO';
+// $user = 'mersun';
+// $pass = '123qweqwe2';
+// try {
+//     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//     $query = "SELECT * FROM USUARIOS WHERE id = :id";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+//     $stmt->execute();
+//     $usuarios = $stmt->fetch(PDO::FETCH_ASSOC);
+//     if(count($usuarios) == 0){
+//         header("location:  usuario.php");
+//         exit();
+//     }
+//     $deleteQuery = "DELETE FROM USUARIOS WHERE id = :id";
+//     $stmt = $pdo->prepare($deleteQuery);
+//     $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+//     $stmt->execute();
+//     $_SESSION['delete'] = time()+ 20;
+//     header("location: usuario.php");
+//         exit();
+// } catch (PDOException $e) {
+//     echo "Erro ao inserir dados: " . $e->getMessage();
+
+// }
+?>
+
+
+// Exercicios - 29
+background.php
+<?php
+// if ( isset($_POST['cor'])){
+//     setcookie('cor', $_POST['cor'], time() + 20,'/');
+//     header('Location: backgroundTwo.php');
+//     exit();
+// };
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="POST">
+    <input type="color" name="cor" required>
+    <button type="submit">Mude</button>
+
+    </form>
+    
+</body>
+</html>
+backgroundTwo.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {background-color: <?php echo isset($_COOKIE['cor']) ? $_COOKIE['cor'] : "#fff"; ?>;}
+    </style>
+</head>
+<body>
+    <a href="background.php">Escolher outra Cor</a>
+</body>
+</html>

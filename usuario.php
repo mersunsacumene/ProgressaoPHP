@@ -4,12 +4,31 @@
     $user = 'mersun';
     $pass = '123qweqwe2';
 
+    session_start();
+    $create = null;
+    $edit = null;
+    $delete = null;
+
+    if (isset($_SESSION['create']) && time() < $_SESSION['create']){
+        $create = true;
+    }else{
+        unset($_SESSION['create']);
+        $create = false;
+    }  if (isset($_SESSION['edit']) && time() < $_SESSION['edit']){
+        $edit = true;
+    }else{
+        unset($_SESSION['edit']);
+        $edit = false;
+    }  if (isset($_SESSION['delete']) && time() < $_SESSION['delete']){
+        $delete = true;
+    }else{
+        unset($_SESSION['delete']);
+        $delete = false;
+    }
     try {
-        // Criação da conexão PDO
         $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-        // Verifica se os dados foram enviados via GET
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
             $sql = "SELECT * FROM USUARIOS";
@@ -20,7 +39,6 @@
 
         }
     } catch (PDOException $e) {
-        // Exibe o erro se ocorrer
         echo "Erro ao inserir dados: " . $e->getMessage();
     }
     $pdo = null;
@@ -35,6 +53,11 @@
     <title>Usuarios</title>
 </head>
 <body>
+    <?php
+    if($create) echo "Cadastrado com sucesso.";
+    if($edit) echo "Edição feita com sucesso.";
+    if($delete) echo "Usuario deletado com sucesso.";
+    ?>
     <table>
         <thead>
             <tr>
@@ -43,6 +66,7 @@
                 <th>Email</th>
                 <th>Idade</th>
                 <th>Endereço</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -53,6 +77,10 @@
                 <td><?php echo($item['email']);?></td>
                 <td><?php echo($item['idade']);?></td>
                 <td><?php echo($item['endereco']);?></td>
+                <td> 
+                <a href="/usuarioEdit.php?id=<?php echo $item['id'];?>">Editar</a>                    
+                <a href="/usuarioDelete.php?id=<?php echo $item['id'];?>">Deletar</a>
+            </td>
             </tr>
             <?php endforeach;?>
         </tbody>
