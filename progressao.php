@@ -607,3 +607,65 @@ index.php -->
 </body>
 </html>
 
+// Exercicios - 25
+contador.php
+<?php
+    // session_start();
+    // if (isset($_SESSION["visitas"])){
+    //     $_SESSION["visitas"] ++;
+    // }else{
+    //     $_SESSION["visitas"] = 0;
+    // }
+    // echo($_SESSION["visitas"] . " de Visitas.");
+
+?>
+
+contador2.php
+<?php
+    // session_start();
+    // if (isset($_SESSION["visitas"])){
+    //     $_SESSION["visitas"] ++;
+    // }else{
+    //     $_SESSION["visitas"] = 0;
+    // }
+    // echo($_SESSION["visitas"] . " de Visitas.");
+
+?>
+
+// Exercicios - 26
+cookie.php
+<?php
+// $name = "mensagem Temporaria";
+// $valor = "Essa é uma mensagem temporaria."; 
+// setcookie($name, $valor, time()+ 2000, "/");
+
+?>
+
+cookieTemporario.php
+<?php
+// if(isset($_COOKIE['mensagem Temporaria'])){
+//     echo'valor:'.$_COOKIE['mensagem Temporaria'];
+// }else{
+//     echo 'Sem mensagem Temporaria';
+// }
+
+?>
+
+// Exercicios - 27
+session.php
+<?php
+// session_start();
+// $_SESSION['temporario'] = time() + 20;  
+?>
+imprimeSession.php
+<?php 
+// session_start();
+// if (isset($_SESSION['temporario']) && time() < $_SESSION['temporario']){
+//     echo 'Sessão ativa pain';
+// }else{
+//     session_destroy();
+//     echo 'Sessão não ativa filhin';
+  
+// }
+
+?>
