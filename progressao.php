@@ -964,3 +964,135 @@ backgroundTwo.php
     <a href="background.php">Escolher outra Cor</a>
 </body>
 </html>
+
+// Exercicios - 30
+home.php
+<?php
+// session_start();
+// require "db.php";
+
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
+//     $email = $_POST["email"];
+//     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+//     $query = "SELECT * FROM Cadastro WHERE email = :email";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->bindParam(":email", $email);
+//     $stmt->execute();
+//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     if($result && password_verify($password, $result["senha"])){
+//         $_SESSION["id"] = $result["id"];
+//         header("Location: home.php");
+//         exit();
+//     }else{
+//         echo"Email ou Senha incorreta.";
+// }
+// }
+?>
+
+<form method="POST">
+    <label for="">Email</label>
+    <input type="email" name="email" required placeholder="Digite seu email:">
+    <label for="">Senha</label>
+    <input type="password" name="senha" required placeholder="Digite sua senha:">
+    <button type="submit">Enviar</button>
+</form>
+
+loginFin.php
+<?php
+// session_start();
+// require "db.php";
+
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
+//     $email = $_POST["email"];
+//     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+//     $query = "SELECT * FROM Cadastro WHERE email = :email";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->bindParam(":email", $email);
+//     $stmt->execute();
+//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     if($result && password_verify($password, $result["senha"])){
+//         $_SESSION["id"] = $result["id"];
+//         header("Location: home.php");
+//         exit();
+//     }else{
+//         echo"Email ou Senha incorreta.";
+// }
+// }
+?>
+
+<form method="POST">
+    <label for="">Email</label>
+    <input type="email" name="email" required placeholder="Digite seu email:">
+    <label for="">Senha</label>
+    <input type="password" name="senha" required placeholder="Digite sua senha:">
+    <button type="submit">Enviar</button>
+</form>
+
+registro.php
+<?php
+// session_start();
+// require "db.php";
+
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
+//     $email = $_POST["email"];
+//     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+//     $query = "SELECT * FROM Cadastro WHERE email = :email";
+//     $stmt = $pdo->prepare($query);
+//     $stmt->bindParam(":email", $email);
+//     $stmt->execute();
+//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+//     if($result && password_verify($password, $result["senha"])){
+//         $_SESSION["id"] = $result["id"];
+//         header("Location: home.php");
+//         exit();
+//     }else{
+//         echo"Email ou Senha incorreta.";
+// }
+// }
+?>
+
+<form method="POST">
+    <label for="">Email</label>
+    <input type="email" name="email" required placeholder="Digite seu email:">
+    <label for="">Senha</label>
+    <input type="password" name="senha" required placeholder="Digite sua senha:">
+    <button type="submit">Enviar</button>
+</form>
+
+db.php
+<?php
+    // $host = 'localhost';
+    // $db = 'ESTUDANDO';
+    // $name = 'mersun';
+    // $pass = '123qweqwe2';
+
+    // try{
+    //     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $name, $pass);
+    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // } catch (PDOException $e) {
+    //     echo "Erro ao inserir dados: " . $e->getMessage();
+    // }
+
+?>
+
+logout.php
+<?php
+    // $host = 'localhost';
+    // $db = 'ESTUDANDO';
+    // $name = 'mersun';
+    // $pass = '123qweqwe2';
+
+    // try{
+    //     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $name, $pass);
+    //     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // } catch (PDOException $e) {
+    //     echo "Erro ao inserir dados: " . $e->getMessage();
+    // }
+
+?>
+
