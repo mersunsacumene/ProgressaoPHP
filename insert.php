@@ -1,13 +1,7 @@
-<?php
-$host = 'localhost';
-$db = 'ESTUDANDO'; 
-$user = 'mersun';
-$pass = '123qweqwe2'; 
+<?
+require "db.php";
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+try{
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nome = $_POST['name'];
         $email = $_POST['email'];
