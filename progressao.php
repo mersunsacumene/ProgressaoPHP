@@ -1,6 +1,5 @@
-
+Exercicio - 1
 <?php
-//Exercicio - 1
 // intval("10");
 // strval(10);
 // floatval(10);
@@ -9,18 +8,16 @@
 
 // echo (strval(2));
 
-
-//Exercicio - 2
+Exercicio - 2
 // $texto = "testando";
 // $Texto = "mudei";
 // $TexTo = "alterei novamente";
 // $teXto = "ultima alteração";
 
 // echo ($texto);
-//testando
+//testando;
 
-
-////Exercicio - 3
+Exercicio - 3
 // echo "Digite seu nome: ";
 // $nome = fgets(STDIN);
 // echo "Digite seu sobrenome: ";
@@ -28,15 +25,13 @@
 // $nomeCompleto = $nome." ".$sobrenome;
 // echo ($nomeCompleto);
 
-
-//Exercicio - 4
+Exercicio - 4
 // $testinho = 0;
 // $teste = $testinho + "teste";
 // echo ($teste);
 //Valor = error, Pois nao soma numero com String
 
-
-//Exercicio - 5
+Exercicio - 5
 // $exemplo="testando";
 // $exemplo2="trabalho";
 // $exemplo3=$exemplo[0].$exemplo2[1];
@@ -45,8 +40,7 @@
 //elemento da lista testando [0] com o segundo 
 //elemento da lista trabalho [1];
 
-
-//Exercicio - 6
+Exercicio - 6
 // echo "Digite seu nome: ";
 // $nome = fgets(STDIN);
 // echo "Digite sua idade: ";
@@ -57,8 +51,7 @@
 // echo "Sua Altura é: " . $altura ." Sua idade é: " . $idade . " Prazer: " . $nome;
 // echo "Sua Altura é:  $altura  Sua idade é:  $idade  Prazer:  $nome";
 
-
-//Exercicio - 7
+Exercicio - 7
 // $nomes = [];
 
 // for ($i = 1; $i <= 3; $i++) {
@@ -73,21 +66,18 @@
 // echo "Lista após remover o último nome: ";
 // print_r($nomes);
 
-
-//Exercicio - 8
+Exercicio - 8
 // $listaFrutas = ["Abacate", "Jabolao", "Uva", "Ameixa", "Abacaxi"];
 // array_splice($listaFrutas, 1 , 0, "Mamao");
 // print_r($listaFrutas);
 
-
-//Exercicio - 9
+Exercicio - 9
 // $priMetade = array_slice($listaFrutas, 0, 3);
 // $segMetade = array_slice($listaFrutas, 3, 5);
 // print_r($priMetade);
 // print_r($segMetade);
 
-
-//Exercicio - 10
+Exercicio - 10
 // $notas = [];
 // echo "Digite seu nome: ";
 // $nome = fgets(STDIN);
@@ -111,8 +101,7 @@
 // echo"Essas foram as notas menores que 5: ";
 // print_r($notasMenor5);
 
-
-//Exercicio - 11
+Exercicio - 11
 // for($n=0; $n <= 10; $n++){
 //    echo($n);
 // }
@@ -130,15 +119,13 @@
 //  $n--;
 // }
 
-
-//Exercicio - 12
+Exercicio - 12
 // $clientes = ["Emerson", "Joao", "Pedro", "Nicolas", "Thayna"];
 // foreach($clientes as $cliente){
 //     echo "Bem vindo $cliente\n";
 // };
 
-
-//Exercicio - 13
+Exercicio - 13
 // do{
 //     echo " 0->Sair \n 1->Hamburguer \n 2->Batata Frita \n 3->Suco Diet \n";
 //     echo "De qual opção do cardápio você deseja? ";
@@ -172,22 +159,19 @@
 //     }
 // } while($opcao != 0);
 
-
-//Exercicio - 14
+Exercicio - 14
 // $dicionario = [
 //     "12312354123"=>"Banana","12312354122"=>"Arroz","12312354121"=>"Mexirica","12312354124"=>"Feijão","12312354125"=>"Suco","12312354126"=>"Refrigerante"
 // ];
 
-
-//Exercicio - 15
+Exercicio - 15
 // $listaDicionario = [
 // ["nome"=>"Banana", "Preco"=>32.99,"Quantidade"=>15],["nome"=>"Banana", "Preco"=>32.99,"Quantidade"=>15],["nome"=>"Banana", "Preco"=>32.99,"Quantidade"=>15],
 // ["nome"=>"Banana", "Preco"=>32.99,"Quantidade"=>15],["nome"=>"Banana", "Preco"=>32.99,"Quantidade"=>15],["nome"=>"Banana", "Preco"=>32.99,"Quantidade"=>15]
 // ];
 // print_r($listaDicionario);
 
-
-//Exercicio - 16 (Lembrando que no inuciado da questão é Calor, nao tem esse nome na lista. Mas associei!!!)
+Exercicio - 16 (Lembrando que no inuciado da questão é Calor, nao tem esse nome na lista. Mas associei!!!)
 // $listaClientes = [
 // ["nome"=>"Ana", "idade"=>25,"Endereço"=>"Rua A, 123"],
 // ["nome"=>"Carlos", "idade"=>30,"Endereço"=>"Avenida B, 456"],
@@ -199,7 +183,7 @@
 //     };
 // };
 
-//Exercicio - 17
+Exercicio - 17
 // echo"Ola, adivinhe o numero sorteado de 0 a 10!!!\n";
 // $tentativa = null;
 // $numbers = rand(0,10);
@@ -213,16 +197,14 @@
 //     }
 // };
 
-
-//Exercicio - 18
+Exercicio - 18
 // for($n=0; $n<=200; $n++){
 //     if($n %2 == 0){
 //         echo("$n \n");
 //     }
 // }
 
-
-//Exercicio - 19
+Exercicio - 19
 // $estoque = [
 //     ["Nome"=>"Camiseta", "Quantidade"=>50, "Preco"=>25.99],
 //     ["Nome"=>"Calça Jeans", "Quantidade"=>30, "Preco"=>59.99],
@@ -286,8 +268,8 @@
 //     echo"Estoque atualizado" . calcularTotal($estoque);  
 // };
 
-//Exercicio - 20
-// Calcaludora.php
+Exercicio - 20
+Calcaludora.php
 // <?php
 //     if($_SERVER["REQUEST_METHOD"] == "POST"){
 //         $numberOne = $_POST["numberOne"];
@@ -317,11 +299,9 @@
 //         $result = "Operador invalido";
 //     }
 //     }
-
-
 // ?>
 
-<!-- // <!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -335,8 +315,8 @@
  </body>
  </html> -->
 
-<!-- index.php -->
-<!-- <!DOCTYPE html>
+index.php
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -354,16 +334,14 @@
             <option value="/">/</option>
             <option value="*">*</option>
         </select>
-
         <button type="submit">Enviar</button>
-
     </form>
 </body>
-</html> -->
+</html>
 
-<!-- Exercicio - 21
-product.php -->
- <?php
+Exercicio - 21
+produtos.php 
+<?php
 // $produtos = [
 //     $produtos = [
 //         1 => [
@@ -390,7 +368,8 @@ product.php -->
 //     $produto = null;
 // }
 ?> 
-<!-- index.php -->
+
+index.php
 <?php
 // $produtos = [
 //     1 => [
@@ -412,7 +391,8 @@ product.php -->
 //     ],
 // ]
 ?> 
- <!-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -432,11 +412,11 @@ product.php -->
         <?php endforeach;?>
     </ul>
 </body>
-</html>  -->
+</html> 
 
-<!-- Exercicios - 22
-index.php -->
-<!-- <!DOCTYPE html>
+Exercicios - 22
+index.php 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -453,8 +433,9 @@ index.php -->
     <button type="submit">Enviar</button>
    </form>
 </body>
-</html> -->
-<!-- login.php -->
+</html> 
+
+login.php
 <?php
 
 // if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -467,8 +448,8 @@ index.php -->
 // }
 // }
 
-// Exercicios - 23
-// cadastro.php
+Exercicios - 23
+cadastro.php
 
 // <!DOCTYPE html>
 // <html lang="en">
@@ -498,51 +479,33 @@ index.php -->
 // </body>
 // </html>
 
-// inser.php
+inser.php
 // <?php
-// // Configurações do banco de dados
-// $host = 'localhost';
-// $db = 'ESTUDANDO'; // Nome do banco de dados
-// $user = 'mersun'; // Nome do usuário do banco de dados
-// $pass = '123qweqwe2';   // Senha do usuário
-
-// try {
-//     // Criação da conexão PDO
-//     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
-//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//     // Verifica se os dados foram enviados via POST
+// require "db.php";
+    
 //     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//         // Obtém os dados do formulário
+      
 //         $nome = $_POST['name'];
 //         $email = $_POST['email'];
 //         $idade = $_POST['age'];
 //         $endereco = $_POST['address'];
-
-//         // Prepara a instrução SQL
+      
 //         $sql = "INSERT INTO USUARIOS(nome, email, idade, endereco) VALUES (:nome, :email, :idade, :endereco)";
-//         $stmt = $pdo->prepare($sql);
-        
-//         // Vincula os parâmetros
+//         $stmt = $pdo->prepare($sql);        
+      
 //         $stmt->bindParam(':nome', $nome);
 //         $stmt->bindParam(':email', $email);
 //         $stmt->bindParam(':idade', $idade);
-//         $stmt->bindParam(':endereco', $endereco);
-        
-//         // Executa a consulta
+//         $stmt->bindParam(':endereco', $endereco); 
 //         $stmt->execute();
 
-//         // Redireciona de volta para o formulário
+       
 //         header("Location: cadastro.php");
 //         exit();
-//     }
-// } catch (PDOException $e) {
-//     // Exibe o erro se ocorrer
-//     echo "Erro ao inserir dados: " . $e->getMessage();
-// }
+//  } 
 // ?>
 
-<!-- Exercicios - 24
+Exercicios - 24
 <?php
     // $host = 'localhost';
     // $db   = 'ESTUDANDO';
@@ -569,9 +532,8 @@ index.php -->
     //     echo "Erro ao inserir dados: " . $e->getMessage();
     // }
     // $pdo = null;
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -601,13 +563,11 @@ index.php -->
             </tr>
             <?php endforeach;?>
         </tbody>
-
-    </table>
-    
+    </table>    
 </body>
 </html>
 
-// Exercicios - 25
+Exercicios - 25
 contador.php
 <?php
     // session_start();
@@ -617,7 +577,6 @@ contador.php
     //     $_SESSION["visitas"] = 0;
     // }
     // echo($_SESSION["visitas"] . " de Visitas.");
-
 ?>
 
 contador2.php
@@ -629,16 +588,14 @@ contador2.php
     //     $_SESSION["visitas"] = 0;
     // }
     // echo($_SESSION["visitas"] . " de Visitas.");
-
 ?>
 
-// Exercicios - 26
+Exercicios - 26
 cookie.php
 <?php
 // $name = "mensagem Temporaria";
 // $valor = "Essa é uma mensagem temporaria."; 
-// setcookie($name, $valor, time()+ 2000, "/");
-
+// setcookie($name, $valor, time() + 20, "/");
 ?>
 
 cookieTemporario.php
@@ -648,10 +605,9 @@ cookieTemporario.php
 // }else{
 //     echo 'Sem mensagem Temporaria';
 // }
-
 ?>
 
-// Exercicios - 27
+Exercicios - 27
 session.php
 <?php
 // session_start();
@@ -664,14 +620,13 @@ imprimeSession.php
 //     echo 'Sessão ativa pain';
 // }else{
 //     session_destroy();
-//     echo 'Sessão não ativa filhin';
-  
+//     echo 'Sessão não ativa filhin';  
 // }
-
 ?>
 
-// Exercicios - 28
+Exercicios - 28
 insert.php
+
 session_start();
 $host = 'localhost';
 $db = 'ESTUDANDO'; // Nome do banco de dados
@@ -707,6 +662,7 @@ try {
     echo "Erro ao inserir dados: " . $e->getMessage();
 }
 ?>
+
 usuario.php
 <?php
     // $host = 'localhost';
@@ -758,6 +714,7 @@ usuario.php
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -802,6 +759,7 @@ usuario.php
 
 </body>
 </html>
+
 usuarioEdit.php
 <?php
 // session_start();
@@ -858,9 +816,6 @@ usuarioEdit.php
     <title>Document</title>
 </head>
 <body>
- <?php
- var_dump($usuarios);
- ?>
      <h1>Cadastro no Banco do Mersun</h>
  <form method="POST">
      <label for="name">Nome</label>
@@ -920,8 +875,7 @@ usuarioDelete.php
 // }
 ?>
 
-
-// Exercicios - 29
+Exercicios - 29
 background.php
 <?php
 // if ( isset($_POST['cor'])){
@@ -949,6 +903,7 @@ background.php
     
 </body>
 </html>
+
 backgroundTwo.php
 <!DOCTYPE html>
 <html lang="en">
@@ -965,7 +920,7 @@ backgroundTwo.php
 </body>
 </html>
 
-// Exercicios - 30
+Exercicios - 30
 home.php
 <?php
 // session_start();
